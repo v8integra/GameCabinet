@@ -7,14 +7,14 @@ See [BUILD_PLAN.md](BUILD_PLAN.md) for the full plan and progress tracker.
 
 ## Run it locally
 
-The games use JavaScript modules, so open them through a local server rather than by
-double-clicking the HTML file:
+The games use JavaScript modules, which browsers block on pages opened straight from disk
+(`file:///…`). Run them through the tiny local server instead:
 
-```bash
-node serve.js
-```
+- **Windows:** double-click `start-cabinet.bat`. It starts the server and opens
+  http://localhost:8090. Close its window to stop the server.
+- **Anywhere:** run `node serve.js` and visit http://localhost:8090 (`node serve.js 3000` picks another port).
 
-Then visit http://localhost:8090. (`node serve.js 3000` picks another port.)
+Opening `index.html` directly shows a notice explaining this. On GitHub Pages it just works.
 
 ## Layout
 
