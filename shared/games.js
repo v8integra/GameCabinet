@@ -4,13 +4,13 @@
 export const GENRES = ['Arcade', 'Action', 'Puzzle', 'Strategy', '3D'];
 
 export const GAMES = [
-  { id: 'serpent', title: 'Serpent', accent: '#4dff88', genres: ['Arcade'], controls: ['keyboard', 'touch'],
+  { id: 'serpent', live: true, title: 'Serpent', accent: '#4dff88', genres: ['Arcade'], controls: ['keyboard', 'touch'],
     hook: 'Eat, grow, and don’t bite your own tail as the pace creeps up.' },
-  { id: 'brickfall', title: 'Brickfall', accent: '#ff3d9a', genres: ['Arcade', 'Action'], controls: ['keyboard', 'mouse', 'touch'],
+  { id: 'brickfall', live: true, title: 'Brickfall', accent: '#ff3d9a', genres: ['Arcade', 'Action'], controls: ['keyboard', 'mouse', 'touch'],
     hook: 'Smash every brick across hand-built levels with multi-ball and lasers.' },
-  { id: 'merge-up', title: 'Merge Up', accent: '#ffd23f', genres: ['Puzzle'], controls: ['keyboard', 'touch'],
+  { id: 'merge-up', live: true, title: 'Merge Up', accent: '#ffd23f', genres: ['Puzzle'], controls: ['keyboard', 'touch'],
     hook: 'Slide and merge matching tiles to chase ever-bigger numbers.' },
-  { id: 'sapper', title: 'Sapper', accent: '#7aa7ff', genres: ['Puzzle'], controls: ['mouse', 'touch'],
+  { id: 'sapper', live: true, title: 'Sapper', accent: '#7aa7ff', genres: ['Puzzle'], controls: ['mouse', 'touch'],
     hook: 'Read the numbers, flag the mines, clear the field.' },
   { id: 'rock-drift', title: 'Rock Drift', accent: '#c9c3ff', genres: ['Arcade', 'Action'], controls: ['keyboard'],
     hook: 'Drift through space and blast rocks into smaller and smaller rocks.' },

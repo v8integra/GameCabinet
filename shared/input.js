@@ -24,7 +24,8 @@ export function createInput({ canvas, width, height }) {
   const held = new Set();
   const pressed = new Set();
   const released = new Set();
-  const pointer = { x: 0, y: 0, down: false, pressed: false, released: false, type: 'mouse' };
+  // button: 0 = primary (left / touch), 1 = middle, 2 = right
+  const pointer = { x: 0, y: 0, down: false, pressed: false, released: false, type: 'mouse', button: 0 };
   let swipe = null;
   let swipeStart = null;
 
@@ -50,8 +51,10 @@ export function createInput({ canvas, width, height }) {
   }
 
   canvas.style.touchAction = 'none';
+  canvas.addEventListener('contextmenu', (e) => e.preventDefault()); // right-click is game input
   canvas.addEventListener('pointerdown', (e) => {
     toLocal(e);
+    pointer.button = e.button;
     pointer.down = true;
     pointer.pressed = true;
     swipeStart = { x: pointer.x, y: pointer.y, t: performance.now() };

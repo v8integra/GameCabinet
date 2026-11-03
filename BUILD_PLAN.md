@@ -3,7 +3,7 @@
 A static website with a landing page ("the cabinet") linking 14 small browser games.
 Pick a game, it opens and plays in the browser. Built for fun; hosted later on GitHub Pages.
 
-Last updated: 2026-11-02 (Phase 0 complete)
+Last updated: 2026-11-02 (Phase 1 complete)
 
 ---
 
@@ -87,7 +87,15 @@ checklist in section 6.
 - [x] `games/_template/` ("Dot Dash"): a tiny playable game that exercises the shell; copy it to start each game
 - Vendor libraries (Three.js, Planck.js) are added when the first game needs them, not up front.
 
-### Phase 1 — Classic warm-ups (prove out the shell)
+### Phase 1 — Classic warm-ups (prove out the shell) ✅ (2026-11-02)
+
+Built as planned, with these details:
+- **Serpent:** Classic / Wrap / Maze modes, with a bonus star after every 5 apples. Obstacle layouts are covered by Maze mode.
+- **Brickfall:** 10 levels; power-ups are Multi-ball, Wide, Laser, Slow and Extra life. Moving bricks were not added (still a stretch goal).
+- **Merge Up:** 4×4 / 5×5, **3 undos per game** (changed from "undo once"), and a "2048! Keep going" banner instead of ending the game.
+- **Sapper:** Easy 9×9 / Medium 16×16 / Hard 30×16, safe first click, chording, and long-press to flag on touch. Hard is tiny on phones (it is meant for desktop). The hex grid was not added (still a stretch goal).
+- Shell additions: title-screen **options** (`options: [...]` → `shell.options`), `pointer.button` for right-click, and a `?debug` URL hook (`window.gcShell`, `shell.debug()`) for automated tests.
+
 | # | Working name | Style | Core features | Stretch |
 |---|---|---|---|---|
 | 1 | **Serpent** | Snake | Grid movement, growth, speed ramps up | Wrap/no-wrap modes, obstacle layouts |
@@ -228,10 +236,10 @@ special), Earth Day.
 | # | Game | Status |
 |---|---|---|
 | 0 | Foundation (shell + landing page) | ✅ Done 2026-11-02 |
-| 1 | Serpent | Not started |
-| 2 | Brickfall | Not started |
-| 3 | Merge Up | Not started |
-| 4 | Sapper | Not started |
+| 1 | Serpent | ✅ Live 2026-11-02 |
+| 2 | Brickfall | ✅ Live 2026-11-02 |
+| 3 | Merge Up | ✅ Live 2026-11-02 |
+| 4 | Sapper | ✅ Live 2026-11-02 |
 | 5 | Rock Drift | Not started |
 | 6 | Star Swarm | Not started |
 | 7 | Block Drop | Not started |

@@ -10,6 +10,9 @@
 // render(ctx, shell)     — called every frame in every state (draws behind overlays)
 // mode: 'custom'         — no 2D context; the game owns the canvas (e.g. Three.js) and
 //                          receives onResize(widthPx, heightPx, dpr)
+// options: [{ key, label, choices: [[value, label], ...] }]
+//                        — picked on the title / game-over screens, read via shell.options[key]
+//                          (kept for this page visit only)
 
 import { createLoop } from './loop.js';
 import { createInput } from './input.js';
@@ -59,7 +62,11 @@ export function createShell(opts) {
     render = () => {},
     onResize = () => {},
     muteKey = 'KeyM',
+    options = [],
   } = opts;
+
+  const optionValues = {};
+  for (const o of options) optionValues[o.key] = o.value ?? o.choices[0][0];
 
   if (accent) document.documentElement.style.setProperty('--accent', accent);
   document.title = `${title} · Game Cabinet`;
@@ -157,6 +164,37 @@ export function createShell(opts) {
     return h('div', { class: 'gc-controls' }, rows);
   }
 
+  function optionsBlock() {
+    if (!options.length) return null;
+    return h(
+      'div',
+      { class: 'gc-options' },
+      options.map((o) => {
+        const seg = h('div', { class: 'gc-seg', role: 'radiogroup', 'aria-label': o.label });
+        for (const [value, label] of o.choices) {
+          const b = h(
+            'button',
+            {
+              type: 'button',
+              class: 'gc-seg-btn',
+              role: 'radio',
+              'aria-checked': String(optionValues[o.key] === value),
+              onclick: () => {
+                optionValues[o.key] = value;
+                for (const x of seg.children) x.setAttribute('aria-checked', String(x === b));
+                if (state === 'title') init(shell); // refresh the backdrop
+                overlay.querySelector('.gc-btn-primary')?.focus({ preventScroll: true });
+              },
+            },
+            label
+          );
+          seg.append(b);
+        }
+        return h('div', { class: 'gc-option' }, h('span', { class: 'gc-option-label' }, o.label), seg);
+      })
+    );
+  }
+
   function showPanel(kind, ...content) {
     overlay.dataset.kind = kind;
     overlay.replaceChildren(h('div', { class: 'gc-panel' }, content));
@@ -182,6 +220,7 @@ export function createShell(opts) {
       h('h2', { class: 'gc-panel-title' }, title),
       tagline ? h('p', { class: 'gc-tagline' }, tagline) : null,
       controlsList(),
+      optionsBlock(),
       h('div', { class: 'gc-actions' }, btn('Play', start, true)),
       h('p', { class: 'gc-hint' }, 'Press Enter to play')
     );
@@ -230,6 +269,7 @@ export function createShell(opts) {
         h('div', {}, h('span', {}, 'Score'), h('b', {}, Math.floor(score).toLocaleString())),
         h('div', {}, h('span', {}, 'Best this visit'), h('b', {}, Math.floor(best).toLocaleString()))
       ),
+      optionsBlock(),
       h('div', { class: 'gc-actions' }, btn('Play again', start, true), backLink()),
       h('p', { class: 'gc-hint' }, 'Press Enter to play again')
     );
@@ -330,6 +370,7 @@ export function createShell(opts) {
     input,
     width,
     height,
+    options: optionValues,
     get state() {
       return state;
     },
@@ -346,7 +387,11 @@ export function createShell(opts) {
     pause,
     resume,
     restart: start,
+    // Games may set shell.debug = () => ({ ...state }) for automated tests.
+    debug: null,
     boot() {
+      // ?debug in the URL exposes the shell as window.gcShell for test scripts.
+      if (new URLSearchParams(location.search).has('debug')) window.gcShell = shell;
       fit();
       init(shell);
       showTitle();
