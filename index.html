@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="A cabinet of small browser games. No sign-ups, no saves — just pick one and play." />
+    <title>Game Cabinet</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='6' y='2' width='20' height='28' rx='3' fill='%2315122c' stroke='%23ff3d9a' stroke-width='2'/%3E%3Crect x='10' y='6' width='12' height='9' rx='1' fill='%232de2e6'/%3E%3Ccircle cx='12' cy='21' r='2' fill='%23ffd23f'/%3E%3Ccircle cx='20' cy='21' r='2' fill='%23ff3d9a'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="shared/cabinet.css" />
+  </head>
+  <body class="cab">
+    <div class="cab-wrap">
+      <header class="cab-hero">
+        <h1 class="cab-logo">Game <span>Cabinet</span></h1>
+        <p class="cab-sub">A row of little games to kill a few minutes. No sign-ups, no saves — pick one and play.</p>
+        <span class="cab-count" id="count"></span>
+      </header>
+
+      <nav class="cab-filters" id="filters" aria-label="Filter games by genre"></nav>
+
+      <main class="cab-grid" id="grid" aria-label="Games"></main>
+
+      <noscript><p class="cab-sub">The cabinet needs JavaScript turned on to run its games.</p></noscript>
+
+      <footer class="cab-foot">
+        Made for fun. Nothing you do here is saved — except Ridge Rider’s garage, which stays in your own browser.
+      </footer>
+    </div>
+    <script type="module" src="shared/landing.js"></script>
+  </body>
+</html>
