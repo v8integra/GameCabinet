@@ -3,7 +3,7 @@
 A static website with a landing page ("the cabinet") linking 14 small browser games.
 Pick a game, it opens and plays in the browser. Built for fun; hosted later on GitHub Pages.
 
-Last updated: 2026-11-02 (Phase 2 complete)
+Last updated: 2026-11-02 (Phase 3 complete)
 
 ---
 
@@ -16,7 +16,7 @@ Last updated: 2026-11-02 (Phase 2 complete)
 | Originality | Every game is "in the style of" a genre. Its name, art, sounds and twists are our own; no copied names, characters, levels or look. |
 | Names | All names below are **working names**. Check "Sky Reach" (and any other name) before any Steam or commercial use. |
 | Tech | Plain HTML + CSS + JavaScript (ES modules). No build step, no framework. |
-| Libraries | Only where they pay for themselves: **Three.js** (Maze Chase 3D) and **Planck.js** (2D physics for Ridge Rider and Mini Golf). Library files live **inside the repo** (`vendor/`), with no CDN at runtime, so the site works offline and moves cleanly into a desktop wrapper later. |
+| Libraries | Only where they pay for themselves: **Three.js** (Maze Chase 3D) and **Planck.js** (2D physics for Ridge Rider; Putt Park turned out not to need it). Library files live **inside the repo** (`vendor/`), with no CDN at runtime, so the site works offline and moves cleanly into a desktop wrapper later. |
 | Art & sound | Made in code: vector shapes, procedural pixel art, and synthesized sound effects through the Web Audio API. No external asset files needed for v1. |
 | Platforms | **Desktop browsers first** (keyboard/mouse). Touch controls are added per game where they fit naturally. *(Open: confirm whether full phone support is a goal.)* |
 | Hosting | GitHub Pages (static). The user creates the repo and commits. |
@@ -118,7 +118,13 @@ Built as planned, with these details:
 | 7 | **Block Drop** | Falling-block puzzle | Our own piece set/rules, hold, preview, line clears, levels | Garbage-rise challenge mode |
 | 8 | **Flutter** | One-button flapper/runner | One key/tap, procedural gaps, speed ramp | Unlockable-free cosmetic themes per run |
 
-### Phase 3 — Bigger 2D games
+### Phase 3 — Bigger 2D games ✅ (2026-11-02)
+
+Built as planned, with these details:
+- **Hop Lane:** endless generated grass / road (cars and trucks) / river (logs you ride) / rail (warning light, then a train). The camera creeps forward once you start, so idling ends in "Too Slow!". Difficulty ramps over the first ~300 rows. The day/night cycle was not added (still a stretch goal).
+- **Sky Reach:** **auto-bounce climber** (you bounce on landing and steer left/right), which keeps it playable on touch. Normal, drifting cloud, and crumbling platforms; springs; Super Jump and Speed power-ups; gems for bonus points. The rising glow speeds up over time and is kept on a leash so it never falls far behind. The sky shifts from day to sunset to space as you climb. Jetpack was not added.
+- **Putt Park:** **hand-written ball physics; Planck.js not needed.** 9 holes: Straight Start, Dogleg, Sand Trap, The Pond, Bumper Alley, The Windmill, Hills (slopes), Zigzag, Grand Finale. The windmill is a door that opens and shuts as the blades turn. Water costs a penalty stroke and returns the ball to where it was hit from. 8-stroke maximum per hole. Points per hole (birdie 300, par 200…) feed the cabinet score. The second 9-hole course was not added.
+
 | # | Working name | Style | Core features | Stretch |
 |---|---|---|---|---|
 | 9 | **Hop Lane** | Road crosser | Procedural endless rows: roads, rivers with logs, trains | Day/night cycle |
@@ -251,9 +257,9 @@ special), Earth Day.
 | 6 | Star Swarm | ✅ Live 2026-11-02 |
 | 7 | Block Drop | ✅ Live 2026-11-02 |
 | 8 | Flutter | ✅ Live 2026-11-02 |
-| 9 | Hop Lane | Not started |
-| 10 | Sky Reach | Not started |
-| 11 | Putt Park | Not started |
+| 9 | Hop Lane | ✅ Live 2026-11-02 |
+| 10 | Sky Reach | ✅ Live 2026-11-02 |
+| 11 | Putt Park | ✅ Live 2026-11-02 |
 | 12 | Bastion | Not started |
 | 13 | Hollow Maze | Not started |
 | 14 | Ridge Rider | Not started |
