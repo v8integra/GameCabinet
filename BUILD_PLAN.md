@@ -3,7 +3,7 @@
 A static website with a landing page ("the cabinet") linking 14 small browser games.
 Pick a game, it opens and plays in the browser. Built for fun; hosted later on GitHub Pages.
 
-Last updated: 2026-11-02 (all 4 phases complete; hand play-test pending)
+Last updated: 2026-11-02 (complete: all 14 games live and hand-tested)
 
 ---
 
@@ -270,7 +270,7 @@ special), Earth Day.
 | 12 | Bastion | ✅ Live 2026-11-02 |
 | 13 | Hollow Maze | ✅ Live 2026-11-02 |
 | 14 | Ridge Rider | ✅ Live 2026-11-02 |
-| — | **Hand play-test pass (user)** | Pending |
+| — | **Hand play-test pass (user)** | ✅ Passed 2026-11-02, no changes needed |
 
 ---
 
