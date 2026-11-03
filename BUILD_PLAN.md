@@ -3,7 +3,7 @@
 A static website with a landing page ("the cabinet") linking 14 small browser games.
 Pick a game, it opens and plays in the browser. Built for fun; hosted later on GitHub Pages.
 
-Last updated: 2026-11-02 (Phase 1 complete)
+Last updated: 2026-11-02 (Phase 2 complete)
 
 ---
 
@@ -103,7 +103,14 @@ Built as planned, with these details:
 | 3 | **Merge Up** | 2048-style | 4×4 merge, swipe + arrows, smooth tile animation | 5×5 mode, undo once |
 | 4 | **Sapper** | Minesweeper-style | 3 difficulties, flagging, safe first click, chording | Hex-grid mode |
 
-### Phase 2 — Arcade action
+### Phase 2 — Arcade action ✅ (2026-11-02)
+
+Built as planned, with these details:
+- **Rock Drift:** waves of splitting rocks, hyperspace on a 3s cooldown, an extra life every 10,000 points. The UFO stretch goal is included: saucers appear from wave 2, and from wave 4 the small ones aim at you.
+- **Star Swarm:** 28-enemy formation (elites take 2 hits). Rows fly in on curved paths, then dive and shoot; elites bring escorts from wave 2. Power-ups: Spread, Rapid, Shield. A **mothership boss every 5th wave** fires spreads and launches drones. The capture twist was not added.
+- **Block Drop:** our own piece set: the 7 four-block shapes, two 3-block shapes (straight and corner), and a **bomb every 24 pieces** that clears 3×3. Also hold, 3-piece preview, ghost piece, lock delay, and auto-repeat on held arrow keys. **Rising mode** (garbage rows) is included.
+- **Flutter:** speed and gap tightening ramp up per point. Each run picks a random day, dusk or night theme (covers the cosmetic-themes stretch goal).
+
 | # | Working name | Style | Core features | Stretch |
 |---|---|---|---|---|
 | 5 | **Rock Drift** | Asteroids-style | Inertia ship, wraparound edges, splitting rocks, hyperspace | UFO enemies |
@@ -240,10 +247,10 @@ special), Earth Day.
 | 2 | Brickfall | ✅ Live 2026-11-02 |
 | 3 | Merge Up | ✅ Live 2026-11-02 |
 | 4 | Sapper | ✅ Live 2026-11-02 |
-| 5 | Rock Drift | Not started |
-| 6 | Star Swarm | Not started |
-| 7 | Block Drop | Not started |
-| 8 | Flutter | Not started |
+| 5 | Rock Drift | ✅ Live 2026-11-02 |
+| 6 | Star Swarm | ✅ Live 2026-11-02 |
+| 7 | Block Drop | ✅ Live 2026-11-02 |
+| 8 | Flutter | ✅ Live 2026-11-02 |
 | 9 | Hop Lane | Not started |
 | 10 | Sky Reach | Not started |
 | 11 | Putt Park | Not started |
