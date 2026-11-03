@@ -26,10 +26,10 @@ export const GAMES = [
     hook: 'Climb into the clouds on springs and power-ups — the ground is rising.' },
   { id: 'putt-park', live: true, title: 'Putt Park', accent: '#3ddc84', genres: ['Puzzle'], controls: ['mouse', 'touch'],
     hook: 'Nine holes of ramps, bumpers and one very rude windmill.' },
-  { id: 'bastion', title: 'Bastion', accent: '#ff8a3d', genres: ['Strategy'], controls: ['mouse', 'touch'],
+  { id: 'bastion', live: true, title: 'Bastion', accent: '#ff8a3d', genres: ['Strategy'], controls: ['mouse', 'touch'],
     hook: 'Build and upgrade towers to hold the road through fifteen waves.' },
-  { id: 'hollow-maze', title: 'Hollow Maze', accent: '#9b7bff', genres: ['3D', 'Action'], controls: ['keyboard'],
+  { id: 'hollow-maze', live: true, title: 'Hollow Maze', accent: '#9b7bff', genres: ['3D', 'Action'], controls: ['keyboard', 'touch'],
     hook: 'Lost in a foggy 3D maze, hunted by things that change with the holidays.' },
-  { id: 'ridge-rider', title: 'Ridge Rider', accent: '#ff5a5a', genres: ['Action'], controls: ['keyboard', 'touch'],
+  { id: 'ridge-rider', live: true, title: 'Ridge Rider', accent: '#ff5a5a', genres: ['Action'], controls: ['keyboard', 'touch'],
     hook: 'Race dirt bikes over wild hills, win tokens, and upgrade your ride.' },
 ];

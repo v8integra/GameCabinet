@@ -58,7 +58,11 @@ export function createInput({ canvas, width, height }) {
     pointer.down = true;
     pointer.pressed = true;
     swipeStart = { x: pointer.x, y: pointer.y, t: performance.now() };
-    canvas.setPointerCapture?.(e.pointerId);
+    try {
+      canvas.setPointerCapture(e.pointerId);
+    } catch {
+      // Synthetic or already-released pointers can't be captured; input still works.
+    }
     e.preventDefault();
   });
   canvas.addEventListener('pointermove', toLocal);

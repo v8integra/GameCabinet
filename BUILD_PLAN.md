@@ -3,7 +3,7 @@
 A static website with a landing page ("the cabinet") linking 14 small browser games.
 Pick a game, it opens and plays in the browser. Built for fun; hosted later on GitHub Pages.
 
-Last updated: 2026-11-02 (Phase 3 complete)
+Last updated: 2026-11-02 (all 4 phases complete; hand play-test pending)
 
 ---
 
@@ -42,9 +42,9 @@ GameCabinet/
 │   ├── games.js            # Game list for the landing page (flip `live: true` when done)
 │   ├── thumbs.js           # Procedural card art per game
 │   └── landing.js          # Builds the landing page
-├── vendor/                 # Added when needed
-│   ├── three.module.min.js
-│   └── planck.min.js
+├── vendor/
+│   ├── three.module.min.js # Three.js r170 (Hollow Maze)
+│   └── planck.mjs          # Planck.js 1.5.1 (Ridge Rider)
 └── games/
     ├── _template/          # "Dot Dash" starter game
     ├── serpent/            # One folder per game: index.html + game.js
@@ -131,7 +131,14 @@ Built as planned, with these details:
 | 10 | **Sky Reach** | Vertical platformer | Ground slowly rises; procedural platforms; springs, moving clouds, crumbling platforms; power-ups: super jump, speed boost | Jetpack, biomes as you climb |
 | 11 | **Putt Park** | Mini golf | Drag-to-putt, 9 holes, bumpers, ramps, windmill, sand, water; par scoring | Second 9-hole course |
 
-### Phase 4 — Systems-heavy games
+### Phase 4 — Systems-heavy games ✅ (2026-11-02)
+
+Built as planned, with these details:
+- **Bastion:** Bolt / Cannon (splash) / Frost (slow) / Spire (sniper), each with 2 upgrades and a 70% sell-back. 15 waves with bosses on 10 and 15. Waves start automatically after 20s or early with Space. **2× fast-forward** is included. The extra maps were not added.
+- **Hollow Maze:** Three.js r170. A **new random maze every level** (loops, no dead ends, a central den). Third-person camera that drops into first-person when a wall is close behind. 4 characters with their perks. 4 hunter roles with scatter/chase phases. Power orbs make hunters edible (200/400/800/1600). Hunters are heard before they're seen (stereo-panned voices). All 10 calendar themes are built and checked, and today's date (2026-11-02) resolves to **Halloween**. The minimap was dropped (fog is the point).
+- **Ridge Rider:** Planck.js 1.5.1 physics with a wheel-joint suspension bike. Gas/brake, leaning mostly in the air. 3 tracks (Meadow Run → Canyon Hops → Ridge Peaks), each unlocked by winning the previous one. 3 bots on the same physics with rubber-banding. Fuel cans, token coins, checkpoints and crash respawn. Upgrades: Engine, Grip, Suspension and Fuel Tank, 5 levels each (40/80/140/220/320 tokens). Saved under `localStorage['gc-ridge-rider']` with a **two-click "Reset progress"**. Prizes: 60/35/20/10, plus 1 per coin. Trick bonuses were not added.
+- Vendored: `vendor/three.module.min.js` (r170) and `vendor/planck.mjs` (1.5.1), both MIT.
+
 | # | Working name | Style | Core features | Stretch |
 |---|---|---|---|---|
 | 12 | **Bastion** | Tower defense | 1 map with a path, 4 tower types with 2 upgrade tiers, 15 waves, gold economy | 2 more maps, fast-forward |
@@ -260,9 +267,10 @@ special), Earth Day.
 | 9 | Hop Lane | ✅ Live 2026-11-02 |
 | 10 | Sky Reach | ✅ Live 2026-11-02 |
 | 11 | Putt Park | ✅ Live 2026-11-02 |
-| 12 | Bastion | Not started |
-| 13 | Hollow Maze | Not started |
-| 14 | Ridge Rider | Not started |
+| 12 | Bastion | ✅ Live 2026-11-02 |
+| 13 | Hollow Maze | ✅ Live 2026-11-02 |
+| 14 | Ridge Rider | ✅ Live 2026-11-02 |
+| — | **Hand play-test pass (user)** | Pending |
 
 ---
 

@@ -41,7 +41,8 @@ function unlock() {
 window.addEventListener('pointerdown', unlock, { passive: true });
 window.addEventListener('keydown', unlock);
 
-export function tone({ freq = 440, to = null, dur = 0.1, type = 'square', vol = 0.3, delay = 0, attack = 0.005 } = {}) {
+// pan: -1 (left) … 1 (right), for positional cues.
+export function tone({ freq = 440, to = null, dur = 0.1, type = 'square', vol = 0.3, delay = 0, attack = 0.005, pan = 0 } = {}) {
   const c = ensure();
   if (!c || muted) return;
   const t = c.currentTime + delay;
@@ -53,7 +54,15 @@ export function tone({ freq = 440, to = null, dur = 0.1, type = 'square', vol = 
   gain.gain.setValueAtTime(0, t);
   gain.gain.linearRampToValueAtTime(vol, t + attack);
   gain.gain.exponentialRampToValueAtTime(0.0001, t + dur);
-  osc.connect(gain).connect(master);
+  let out = gain;
+  if (pan && c.createStereoPanner) {
+    const p = c.createStereoPanner();
+    p.pan.value = Math.max(-1, Math.min(1, pan));
+    gain.connect(p);
+    out = p;
+  }
+  osc.connect(gain);
+  out.connect(master);
   osc.start(t);
   osc.stop(t + dur + 0.02);
 }
